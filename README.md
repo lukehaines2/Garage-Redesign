@@ -2,7 +2,7 @@
 
 **V2 complete for design review — preliminary, reference dimensions subject to verification.**
 
-`WORK_STATUS.md` records what is complete, what remains outstanding and the V3 backlog for 15 September 2026. V3 is planned only; the first alternative will explore the newly supplied plainer timber barn and shut-door styling.
+`WORK_STATUS.md` records what is complete, what remains outstanding and the V3 design backlog for 15 September 2026 and V4 planning-package backlog. V3 is now built in `output/V3/`: natural timber barn with closed end bays, and weathered timber/charcoal-roof alternative with two open bays. Neither is selected.
 
 Start with `output/P02/pdf/existing-drawings-P02.pdf` and `output/P02/pdf/proposed-drawings-P02.pdf`. The complete bundle is `output/P02/garage-review-pack-P02.zip`. Each PDF contains six A3 landscape sheets at 1:50: floor plan, front/rear/left/right elevations and a geometric roof section. Print at **100% / actual size**, never “fit to page”. A 2 m scale bar must measure 40 mm on paper.
 
@@ -37,3 +37,9 @@ Automated checks verify PDF paper size, vector scale, text margins, roof geometr
 V3 design/material alternatives can proceed provisionally from this baseline. Progress towards a planning submission requires a confirmed address/site, measurements, boundary and access mapping, roof decision and council validation checklist. Location/site plans and structural construction details are not included in P02. No claim of planning approval or survey accuracy is made.
 
 P02 uses natural oak framing, natural timber boarding, curved braces and red profiled tiles from the new appearance reference. Tile product and frame construction remain provisional. P01 is preserved in the original output paths.
+
+V4 will develop the selected V3 scheme towards Ben’s five requested planning document groups. See `Original Ref docs/V4-planning-notes.md` for the supplied correspondence and separate, unverified Perplexity checklist. V2 is committed as `cf833b4`; subsequent planning notes do not modify that frozen review pack.
+
+## V3 alternatives
+
+Start with `output/V3/comparison-front-three-quarter.png` and `output/V3/comparison-entrance.png`. Editable models are `output/V3/models/garage-V3-A.blend` and `garage-V3-B.blend`; the complete archive is `output/V3/garage-V3-review-pack.zip`. See `output/V3/README.md` for reproduction. V4 planning preparation remains queued.

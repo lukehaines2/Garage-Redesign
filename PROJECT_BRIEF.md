@@ -1,6 +1,6 @@
 # Garage replacement / cart lodge — working source of truth
 
-Revision 0.4 · 14 September 2026 · V2 (drawing issue P02) complete as a preliminary design-review iteration. V3 is queued for 15 September; not implemented.
+Revision 0.6 · 14 September 2026 · V2 (drawing issue P02) complete as a preliminary design-review iteration. V3 design alternatives built following the user’s new instruction; V4 planning preparation remains queued after design selection.
 
 See `WORK_STATUS.md` for the current completion inventory and ordered V3 backlog. V2 is not a surveyed or submission-ready planning set.
 
@@ -170,10 +170,28 @@ Priority inputs:
 - Still needed: measured site/right-limit/fence offsets, original uncropped drawings, actual address and council, verified roof geometry, structural frame/roof design, door details, chosen tile product and actual vehicle variant. Site/location plans and submission validation remain pending.
 
 
-## V2 freeze and V3 design backlog — 14 September 2026
+## V2 freeze and original V3 backlog — historical 14 September 2026
 
-V2 is the user-facing iteration name; P02 remains its drawing/model revision and output folder. Preserve this baseline for comparison. No V3 geometry, materials variants or renders have been implemented.
+V2 is the user-facing iteration name; P02 remains its drawing/model revision and output folder. Preserve this baseline for comparison. At this point V3 had not been implemented; the later build instruction below supersedes this deferral.
 
 **S9 — V3 inspiration:** `Original Ref docs/V3-barn-style-timber-doors-reference.jpg`, copied from the user's attached image. The low-resolution reference suggests a plainer barn form, natural timber and solid timber doors; it appears to show doors at both ends and an open central bay. It supplies appearance inspiration, not dimensions or a confirmed replacement layout. The user's accompanying description governs the intent: more pure barn style, wood and shut-door styling.
 
 For tomorrow, 15 September 2026, queue V3-A as one of the first alternative designs using S9. Explore the plainer timber/closed-door appearance and explicitly decide which bays receive doors; do not silently supersede V2's left enclosed bay and two open bays. Then develop at least one further distinct alternative (not yet specified) and render comparable views with the same dimensional baseline and Model Y. These are design/material alternatives, not a selected final scheme. Task-list entry only: no scheduled automation and no implementation now.
+
+
+## V4 planning scope — source update, 14 September 2026
+
+**S10:** User-pasted email from Ben (ben@benelvinplanning.co.uk) to Mark Haines, 25 August 2026 09:02, subject “RE: Garage/car port application”. **S11:** Pasted Perplexity general drawing guidance, with citation placeholders but no recoverable source links. Both are recorded separately in `Original Ref docs/V4-planning-notes.md`.
+
+Ben requests five document groups: site location plan, existing site plan, proposed site plan, existing building elevations/floor plan for demolition, and proposed building elevations/floor plan. Adopt these as V4's working scope, subject to actual council validation. We have preliminary V2 building drawings for the last two groups, not verified application-ready documents. The three site/location groups have not been produced.
+
+V3 remains alternative design/material iterations. V4 coordinates the selected design, verified site inputs and supplier-provided drawings into the planning set. First establish what the timber kit provider can supply, then assign the remaining survey/drafting/review work; do not presume external engagement is necessary or that all work is already covered. Ben's approximately £800 anecdote is another project's cost, not a quote for this one.
+
+S11 provides topics to check—roof plan, sections/levels, materials and possible design/access statement—but none are newly confirmed as mandatory here. V2 already has geometric sections and illustrative material notes; these do not establish final roof construction or product specification. Current local requirements, actual site/council and application route still need verification. See WORK_STATUS.md for the five-document gap analysis and ordered V4 tasks. No supplier contact, appointment or submission has been made.
+
+
+## V3 implementation — subsequent “build v3” instruction
+
+The user authorised implementation now, superseding the prior deferral. V3-A interprets S9 as two closed end bays with a central open bay: natural timber, red profiled roof, diagonal door bracing and simpler straight knee braces. This layout interpretation was explicitly stated before modelling; it remains for review. V3-B is a proposed second option with weathered timber, charcoal profiled tiles, natural timber doors/frame, and V2's left closed/two open layout. Neither option is selected or approved by Dad.
+
+Both load the preserved V2 model and retain its dimensions, Model Y envelope, light and camera settings for comparable renders. Separate editable models, six individual exterior renders and three V2/A/B comparison boards are in output/V3/. Design choices are in data/v3-options.json. Source dimensions and V2 planning drawings remain unchanged; V3 does not imply a new verified drawing issue. Site fit, structural members, tile product, door operation, ground levels and actual vehicle variant remain unverified. V4 follows selection and the outstanding input checks.

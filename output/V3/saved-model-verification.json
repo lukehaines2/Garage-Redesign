@@ -1,0 +1,16 @@
+[
+  {
+    "option": "A",
+    "result": "PASS",
+    "saved_model_sha256": "0d3e09afe0df76cb1eb20a0a9478427e2e78dfb1d473517b17785a263a5e600a",
+    "door_leaves": 4,
+    "checks": "Door leaves fit actual post openings; straight braces; Model Y dimensions; ridge height; same saved camera scale"
+  },
+  {
+    "option": "B",
+    "result": "PASS",
+    "saved_model_sha256": "1df6af97e34ee22576031f4fd4cadbd47874defbd814c1250d12e8d28d5c0a9c",
+    "door_leaves": 2,
+    "checks": "Door leaves fit actual post openings; straight braces; Model Y dimensions; ridge height; same saved camera scale"
+  }
+]

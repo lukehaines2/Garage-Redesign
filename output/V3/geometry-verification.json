@@ -1,0 +1,22 @@
+[
+  {
+    "option": "A",
+    "result": "PASS",
+    "model_sha256": "0d3e09afe0df76cb1eb20a0a9478427e2e78dfb1d473517b17785a263a5e600a",
+    "doors": 4,
+    "open_bays": 1,
+    "ridge_m": 4.163000106811523,
+    "car_height_m": 1.6239999532699585,
+    "baseline_sha256": "aa936d695eba87f08bb3ce4fa6e0e278dca42756f9629338f38ac944fe0d0193"
+  },
+  {
+    "option": "B",
+    "result": "PASS",
+    "model_sha256": "1df6af97e34ee22576031f4fd4cadbd47874defbd814c1250d12e8d28d5c0a9c",
+    "doors": 2,
+    "open_bays": 2,
+    "ridge_m": 4.163000106811523,
+    "car_height_m": 1.6239999532699585,
+    "baseline_sha256": "aa936d695eba87f08bb3ce4fa6e0e278dca42756f9629338f38ac944fe0d0193"
+  }
+]

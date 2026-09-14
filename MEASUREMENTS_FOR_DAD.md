@@ -47,3 +47,11 @@ The 150 mm posts, 180 mm beam depth, 100 mm walls, 300 mm plinth and 150 mm prop
 
 - [ ] For the barn-style reference, decide which bays should have solid timber doors and how many remain open. This is an alternative, not an approved change to V2.
 - [ ] Choose a second distinct design/material alternative to compare with V2 and the first barn-style option.
+
+
+## V4 supplier and planning coordination
+
+- [ ] Identify the timber kit provider(s) and ask what proposed floor plans/elevations they can supply, with sample sheets, dimensions, formats and revision/customisation scope.
+- [ ] Confirm who will provide the location plan, existing/proposed site plans and verified existing-building drawings; coordinate remaining scope with Ben once supplier coverage is known.
+- [ ] Confirm the applicable council/application route and any supplementary drawing/document requirements. The pasted generic checklist is not a council validation list.
+- [ ] Treat Ben's £800 example as historical context only; obtain an actual scope/quote if external help is chosen.
