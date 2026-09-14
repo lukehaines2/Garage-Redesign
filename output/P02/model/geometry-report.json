@@ -1,0 +1,21 @@
+{
+  "proposed_pitch_deg": 31.84028101360359,
+  "existing_pitch_deg": 42.436229788535,
+  "clear_openings_mm": [
+    2775.0,
+    2850,
+    2775.0
+  ],
+  "open_bays": 2,
+  "door_leaves": 2,
+  "car_body_dimensions_mm": {
+    "width": 1800,
+    "length": 4500,
+    "height": 1450
+  },
+  "object_count": 751,
+  "roof_top_ridge_m": 4.163,
+  "materials_source": "Dad 14 Sep 2026 22:01",
+  "site_photo": "S5 - context only, unmeasured",
+  "eaves_at_wall_m": 2.3
+}

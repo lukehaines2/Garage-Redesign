@@ -1,0 +1,28 @@
+{
+  "model_sha256": "9bd871c6d31bbff13a5f0a4e8a28e0bc9ac436315215e2074053d8194752f3cc",
+  "result": "PASS",
+  "checked": "Saved .blend geometry, not only parameter values",
+  "proposed_roof_bounds_m": [
+    [
+      -0.15000000596046448,
+      9.149999618530273
+    ],
+    [
+      -0.15000000596046448,
+      6.150000095367432
+    ],
+    [
+      2.138888359069824,
+      4.163000106811523
+    ]
+  ],
+  "clear_openings_mm": [
+    2774.9999463558197,
+    2850.0001430511475,
+    2775.00057220459
+  ],
+  "paired_door_leaves": 2,
+  "open_front_bays": 2,
+  "existing_roof_length_mm": 7200,
+  "visual_assumptions_remain": true
+}

@@ -1,0 +1,252 @@
+{
+  "revision": "P02",
+  "units": "mm",
+  "status": "Preliminary - reference dimensions, subject to verification",
+  "existing": {
+    "width": {
+      "value": 3500,
+      "source": "S2",
+      "status": "reference"
+    },
+    "depth": {
+      "value": 6800,
+      "source": "S2",
+      "status": "reference"
+    },
+    "eaves": {
+      "value": 2200,
+      "source": "S2",
+      "status": "reference"
+    },
+    "ridge": {
+      "value": 3800,
+      "source": "S2",
+      "status": "reference"
+    },
+    "roof_length": {
+      "value": 7200,
+      "source": "S2",
+      "status": "reference"
+    },
+    "approach": {
+      "value": 1200,
+      "source": "S2",
+      "status": "reference"
+    },
+    "door_height": {
+      "value": 2000,
+      "source": "S2",
+      "status": "reference"
+    },
+    "door_width": {
+      "value": 2200,
+      "source": "1100 label tentatively interpreted as one leaf",
+      "status": "visual assumption"
+    },
+    "wall": {
+      "value": 100,
+      "source": "schematic only",
+      "status": "visual assumption"
+    },
+    "gable_overhang": {
+      "value": 200,
+      "source": "7200 minus 6800, assumed symmetric",
+      "status": "derived assumption"
+    },
+    "eave_overhang": {
+      "value": 100,
+      "source": "unknown in source",
+      "status": "visual assumption"
+    }
+  },
+  "proposed": {
+    "width": {
+      "value": 9000,
+      "source": "S1",
+      "status": "reference"
+    },
+    "depth": {
+      "value": 6000,
+      "source": "S1",
+      "status": "reference"
+    },
+    "eaves": {
+      "value": 2300,
+      "source": "S1",
+      "status": "reference"
+    },
+    "ridge": {
+      "value": 4163,
+      "source": "S1, takes precedence over conflicting 30 degree note for P01",
+      "status": "reference"
+    },
+    "bay": {
+      "value": 3000,
+      "source": "S1",
+      "status": "reference"
+    },
+    "post": {
+      "value": 150,
+      "source": "visual member only; not engineered",
+      "status": "visual assumption"
+    },
+    "wall": {
+      "value": 100,
+      "source": "schematic only",
+      "status": "visual assumption"
+    },
+    "plinth": {
+      "value": 300,
+      "source": "visual only",
+      "status": "visual assumption"
+    },
+    "roof_thickness": {
+      "value": 80,
+      "source": "visual only, kept below roof datum",
+      "status": "visual assumption"
+    },
+    "overhang": {
+      "value": 150,
+      "source": "unresolved source slope length; visual only",
+      "status": "visual assumption"
+    },
+    "beam_depth": {
+      "value": 180,
+      "source": "visual member only; not engineered",
+      "status": "visual assumption"
+    },
+    "partition": {
+      "value": true,
+      "source": "enclosed left bay interpretation",
+      "status": "visual assumption"
+    },
+    "source_pitch": {
+      "value": 30,
+      "source": "S1, conflicts with heights and span",
+      "status": "conflicting"
+    },
+    "source_slope": {
+      "value": 3572,
+      "source": "S1, endpoints unknown; not controlling",
+      "status": "conflicting"
+    }
+  },
+  "car": {
+    "width": {
+      "value": 1800,
+      "source": "generic scale car, body width",
+      "status": "visual assumption"
+    },
+    "length": {
+      "value": 4500,
+      "source": "generic scale car",
+      "status": "visual assumption"
+    },
+    "height": {
+      "value": 1450,
+      "source": "generic scale car",
+      "status": "visual assumption"
+    }
+  },
+  "finishes": {
+    "frame": {
+      "value": "Traditional exposed oak frame, natural oak colour",
+      "source": "S6 Dad 14 Sep 2026 22:01; S7 curved braces appearance",
+      "status": "requested"
+    },
+    "boarding": {
+      "value": "Natural wood-coloured horizontal weatherboarding",
+      "source": "S6 Dad 14 Sep 2026 22:01; S7 warm natural timber appearance",
+      "status": "requested; species and finish pending"
+    },
+    "roof": {
+      "value": "Red profiled pantile-style roof, matching S7 appearance",
+      "source": "S6 Dad requests pantiles; S7 caption describes interlocking concrete tiles",
+      "status": "appearance requested; clay/concrete and product unresolved"
+    },
+    "doors": {
+      "value": "Natural timber paired doors",
+      "source": "matching new boarding palette",
+      "status": "visual assumption"
+    },
+    "plinth": {
+      "value": "Red brick retained from P01",
+      "source": "S1; no new change requested",
+      "status": "reference; confirm"
+    },
+    "existing_boarding": {
+      "value": "Weathered natural timber",
+      "source": "S5 oblique photograph",
+      "status": "photographic observation"
+    },
+    "existing_doors": {
+      "value": "Blue-green painted doors",
+      "source": "S5 oblique photograph",
+      "status": "photographic observation"
+    },
+    "rainwater_goods": {
+      "value": "Dark gutters and downpipe, as S7",
+      "source": "S7 reference image",
+      "status": "visual assumption; drainage route not designed"
+    }
+  },
+  "site_constraints": {
+    "right_limit": {
+      "value": "No extension to the right, in the user's photo/site viewpoint",
+      "source": "User 14 Sep 2026",
+      "status": "confirmed design constraint; physical line unmeasured"
+    },
+    "left_extent": {
+      "value": "Potential space to left towards fence without further tree removal",
+      "source": "User 14 Sep 2026, qualified by \"I think\"",
+      "status": "provisional extent; measurement and fence identification required"
+    },
+    "trees": {
+      "value": "No further tree removal intended",
+      "source": "User 14 Sep 2026",
+      "status": "design constraint"
+    },
+    "photo_mapping": {
+      "value": null,
+      "source": "S5 is an oblique photo, not a surveyed plan",
+      "status": "unknown; cannot assign north, boundaries or distances"
+    }
+  },
+  "roof_visual": {
+    "tile_width": {
+      "value": 230,
+      "source": "Illustrative pantile geometry, not a selected product",
+      "status": "visual assumption"
+    },
+    "course_gauge": {
+      "value": 300,
+      "source": "Illustrative pantile geometry, not a selected product",
+      "status": "visual assumption"
+    },
+    "profile_height": {
+      "value": 36,
+      "source": "Illustrative pantile geometry, not a selected product",
+      "status": "visual assumption"
+    },
+    "overlap": {
+      "value": 25,
+      "source": "Illustrative pantile geometry, not a selected product",
+      "status": "visual assumption"
+    },
+    "ridge_radius": {
+      "value": 120,
+      "source": "Illustrative pantile geometry, not a selected product",
+      "status": "visual assumption"
+    },
+    "ridge_length": {
+      "value": 450,
+      "source": "Illustrative pantile geometry, not a selected product",
+      "status": "visual assumption"
+    },
+    "underlay_drop": {
+      "value": 90,
+      "source": "Illustrative pantile geometry, not a selected product",
+      "status": "visual assumption"
+    }
+  }
+}
