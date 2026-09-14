@@ -114,16 +114,17 @@ def elevation(c,name,view):
    for row in range(4,int(r-e),4):s.line(x-endov,y-r+row,x+w+endov,y-r+row,LIGHT,.1)
  if pro and view=='front':
   s.rect(x,y-e,w,e,fill='#ffffff')
+  ef=e-p['eaves_to_frame_top']/50
   post=p['post']/50;beam=p['beam_depth']/50
-  s.rect(x,y-e,w,beam,fill='#c6a67d')
-  for pos in post_positions():s.rect(x+pos/50-post/2,y-e,post,e,fill='#c6a67d')
+  s.rect(x,y-ef,w,beam,fill='#c6a67d')
+  for pos in post_positions():s.rect(x+pos/50-post/2,y-ef,post,ef,fill='#c6a67d')
   dw=clear_openings()[0]/50;dx=x+post
-  s.rect(dx,y-e+beam,dw,e-beam,fill='#e9dcc6')
-  for i in range(1,14):s.line(dx+dw*i/14,y-e+beam,dx+dw*i/14,y,LIGHT,.1)
-  s.line(dx+dw/2,y-e+beam,dx+dw/2,y,w=.4)
+  s.rect(dx,y-ef+beam,dw,ef-beam,fill='#e9dcc6')
+  for i in range(1,14):s.line(dx+dw*i/14,y-ef+beam,dx+dw*i/14,y,LIGHT,.1)
+  s.line(dx+dw/2,y-ef+beam,dx+dw/2,y,w=.4)
   for bx,direction in [(p['bay']/50,1),(2*p['bay']/50,-1),(2*p['bay']/50,1),((p['width']-p['post']/2)/50,-1)]:
    pts=[]
-   for u in [j/8 for j in range(9)]:pts.append((x+bx+direction*10.4*u,y-e+4.4+10*(1-u)**2))
+   for u in [j/8 for j in range(9)]:pts.append((x+bx+direction*10.4*u,y-ef+4.4+10*(1-u)**2))
    pts.extend((a,b-2) for a,b in reversed(pts.copy()));s.poly(pts,'#c6a67d')
   for i in [1,2]:s.text(x+30+60*i,y-18,'OPEN',3.2,'middle')
   for i in range(3):s.dim(x+60*i,x+60*(i+1),y+25,y,'3000 nominal')
@@ -142,7 +143,7 @@ def elevation(c,name,view):
  s.vdim(y-r,y,x+w+13,x+w,str(p['ridge'])+' ridge')
  s.vdim(y-e,y,x-13,x,str(p['eaves'])+' eaves')
  s.text(x,52,'All heights relative to provisional ground datum 0.',3)
- if pro:s.notes(x,226,[f'Roof: {pitch(name):.2f} deg derived from span and heights; source 30 deg conflicts.','Traditional oak frame / natural timber boarding / red profiled roof tiles (S6/S7).','Red brick plinth retained; frame sizes, joints and clay/concrete tile product unverified.'])
+ if pro:s.notes(x,226,[f'Roof: {pitch(name):.2f} deg derived from span and heights; source 30 deg conflicts.','Traditional oak frame / natural timber boarding / red profiled roof tiles (S6/S7).','Beam underside 2030 assumed (90 roof allowance + 180 beam); verify structure.'])
  else:s.notes(x,226,['Photo S5: weathered timber and blue-green doors; roof covering still to be verified.', 'S2 labels roof corrugated; photograph appears tiled - confirm covering.', 'Side openings unresolved where original image is cropped.' if view in ['left','right'] else 'Front doors schematic; rear reference indicates no openings.'])
  s.finish()
 

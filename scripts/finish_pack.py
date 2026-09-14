@@ -5,7 +5,7 @@ import json,zipfile,hashlib
 from common import OUT,REV,ROOT,values,pitch
 out=OUT;renders=out/'renders'
 model=out/'model/garage-baseline-P02.blend'
-for name in ['proposed-front-three-quarter','proposed-entrance','proposed-rear-three-quarter','massing-existing','massing-proposed']:
+for name in ['proposed-front-three-quarter','proposed-entrance','proposed-clearance-front','proposed-rear-three-quarter','massing-existing','massing-proposed']:
  assert (renders/f'{name}.png').stat().st_mtime>=model.stat().st_mtime, f'Stale render: {name}'
 verification=json.loads((out/'model/geometry-verification.json').read_text())
 assert verification['result']=='PASS' and verification['model_sha256']==hashlib.sha256(model.read_bytes()).hexdigest(), 'Verify current Blender model first'
@@ -30,15 +30,25 @@ for i,(name,title) in enumerate(views):
  x=(i%2)*1200;y=145+(i//2)*900
  pic=Image.open(renders/f'{name}.png').convert('RGB').resize((1200,840));board.paste(pic,(x,y));d.text((x+35,y+847),title,font=font(25),fill=ink)
 x,y=1245,1120
-for text,size in [('REFERENCE DIMENSIONS',31),('9.0 x 6.0 m footprint',27),('2.300 m eaves / 4.163 m ridge',27),(f"Derived roof pitch: {pitch('proposed'):.2f} degrees",27),('',20),('Source 30-degree pitch remains unresolved.',23),('Oak frame / natural timber / red profiled tiles.',23),('Car body: 4.50 x 1.80 x 1.45 m; mirrors omitted.',23),('Frame sizes, tile product and siting unverified.',23),('',20),('PRELIMINARY',31),('Reference dimensions, subject to verification.',23)]:
+for text,size in [('REFERENCE DIMENSIONS',31),('9.0 x 6.0 m footprint',27),('2.300 m eaves / 4.163 m ridge',27),(f"Derived roof pitch: {pitch('proposed'):.2f} degrees",27),('',20),('Source 30-degree pitch remains unresolved.',23),('Oak frame / natural timber / red profiled tiles.',23),('Model Y: 4.790 x 1.920 x 1.624 m (body).',23),('Frame sizes, tile product and siting unverified.',23),('',20),('PRELIMINARY',31),('Reference dimensions, subject to verification.',23)]:
  d.text((x,y),text,font=font(size),fill=ink if size==31 else muted);y+=size+19
 board.save(renders/'baseline-review-board-P02.png')
+im=Image.new('RGB',(1500,1300),bg);im.paste(Image.open(renders/'proposed-clearance-front.png').convert('RGB'),(0,100));d=ImageDraw.Draw(im)
+d.text((40,25),'MODEL Y / PROVISIONAL ENTRANCE CLEARANCE',font=font(34),fill=ink)
+scale=1500/11.5
+y1=100+525-(2.03-1.8)*scale;y2=100+525-(1.624-1.8)*scale
+xx=750
+d.line([(xx,y1),(xx,y2)],fill='#ad422d',width=3)
+for yy in [y1,y2]:d.line([(xx-9,yy),(xx+9,yy)],fill='#ad422d',width=3)
+d.text((xx+16,y1+8),'406 mm',font=font(24),fill='#ad422d')
+for i,t in enumerate(['2025+ EU Premium reference: roof 1624 mm; beam underside 2030 mm assumed.', 'Nominal clearance on level floor; confirm actual car, beam and roof construction.', 'Simplified Model Y geometry. Closed tailgate; no roof rack. Preliminary.']):d.text((40,1150+i*40),t,font=font(25),fill=ink)
+im.save(renders/'model-y-clearance-P02.png')
 # Reproducible local bundle; source references included, temporary runtime excluded.
 archive=out/'garage-review-pack-P02.zip'
 files=[]
 for folder in ['scripts','data','Original Ref docs',*[str((OUT/n).relative_to(ROOT)) for n in ['pdf','svg','model','renders']]]:
  files.extend(p for p in (ROOT/folder).rglob('*') if p.is_file() and '__pycache__' not in p.parts and p.suffix!='.blend1')
-files.extend(ROOT/n for n in ['README.md','PROJECT_BRIEF.md','MEASUREMENTS_FOR_DAD.md','requirements.txt'])
+files.extend(ROOT/n for n in ['README.md','PROJECT_BRIEF.md','WORK_STATUS.md','MEASUREMENTS_FOR_DAD.md','requirements.txt'])
 files.extend(p for p in [out/'validation-report.json',out/'QA_NOTES.md'] if p.exists())
 with zipfile.ZipFile(archive,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=6) as z:
  for p in sorted(files):z.write(p,p.relative_to(ROOT))

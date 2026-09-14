@@ -25,5 +25,14 @@ for a,b in zip(openings,clear_openings()):near(a,b)
 doors=[o for o in bpy.data.objects if o.name.startswith('Left bay double door')]
 assert len(doors)==2 and all(bounds(o)[0][1]<p['bay']/1000 for o in doors)
 near(bounds(bpy.data.objects['Existing roof'])[1][1]-bounds(bpy.data.objects['Existing roof'])[1][0],q['roof_length']/1000)
-report={'model_sha256':hashlib.sha256(Path(bpy.data.filepath).read_bytes()).hexdigest(),'result':'PASS','checked':'Saved .blend geometry, not only parameter values','roof_support_bounds_m':rb,'roof_ridge_cap_height_m':bounds(bpy.data.objects['Red profiled ridge caps'])[2][1],'oak_frame_and_pantile_checks':'PASS','clear_openings_mm':openings,'paired_door_leaves':len(doors),'open_front_bays':len(posts)-1-1,'existing_roof_length_mm':q['roof_length'],'visual_assumptions_remain':True}
+car=bpy.data.collections['TESLA MODEL Y - 2025+ Premium reference, simplified']
+cb=[bounds(o) for o in car.objects if o.type=='MESH']
+ce=[[min(b[i][0] for b in cb),max(b[i][1] for b in cb)] for i in range(3)]
+near(ce[2][1],values('car')['height']/1000)
+near(ce[0][1]-ce[0][0],values('car')['width_with_mirrors']/1000)
+near(ce[1][1]-ce[1][0],values('car')['length']/1000)
+beam_bottom=bounds(bpy.data.objects['Front beam - 180 deep assumed'])[2][0]
+near(beam_bottom,2.03)
+clearance=(beam_bottom-ce[2][1])*1000
+report={'model_sha256':hashlib.sha256(Path(bpy.data.filepath).read_bytes()).hexdigest(),'result':'PASS','vehicle_bounds_m':ce,'entrance_beam_underside_mm':beam_bottom*1000,'model_y_roof_clearance_mm':clearance,'checked':'Saved .blend geometry, not only parameter values','roof_support_bounds_m':rb,'roof_ridge_cap_height_m':bounds(bpy.data.objects['Red profiled ridge caps'])[2][1],'oak_frame_and_pantile_checks':'PASS','clear_openings_mm':openings,'paired_door_leaves':len(doors),'open_front_bays':len(posts)-1-1,'existing_roof_length_mm':q['roof_length'],'visual_assumptions_remain':True}
 (OUT/'model/geometry-verification.json').write_text(json.dumps(report,indent=2));print(json.dumps(report))

@@ -8,12 +8,17 @@
   ],
   "open_bays": 2,
   "door_leaves": 2,
-  "car_body_dimensions_mm": {
-    "width": 1800,
-    "length": 4500,
-    "height": 1450
+  "car_reference_dimensions_mm": {
+    "width": 1920,
+    "width_with_mirrors": 2129,
+    "length": 4790,
+    "height": 1624,
+    "wheelbase": 2890,
+    "front_overhang": 889,
+    "ground_clearance": 167
   },
-  "object_count": 751,
+  "vehicle": "Tesla Model Y Premium 2025+ EU (simplified)",
+  "object_count": 760,
   "roof_top_ridge_m": 4.163,
   "materials_source": "Dad 14 Sep 2026 22:01",
   "site_photo": "S5 - context only, unmeasured",

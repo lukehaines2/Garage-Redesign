@@ -1,6 +1,8 @@
 # Garage replacement / cart lodge — working source of truth
 
-Revision 0.2 · 14 September 2026 · Status: P01 preliminary review pack implemented; site and dimensions remain unverified.
+Revision 0.4 · 14 September 2026 · V2 (drawing issue P02) complete as a preliminary design-review iteration. V3 is queued for 15 September; not implemented.
+
+See `WORK_STATUS.md` for the current completion inventory and ordered V3 backlog. V2 is not a surveyed or submission-ready planning set.
 
 ## 1. Purpose and authority
 
@@ -18,12 +20,12 @@ This file is the project record. Mark information as confirmed, reference-only, 
 | New building | Confirmed intent | Two open carport bays plus a left-hand bay with double doors; three bays overall. |
 | Left-hand | Confirmed by user | Enclosed bay on the left when facing the vehicle entrance, as rendered in P01. Actual site siting/orientation still unverified. |
 | Enclosed bay | Partly unknown | Doors confirmed; full dividing wall, use, locking, ventilation and any additional openings remain to be decided. |
-| Car in visualisation | Requested in quoted brief | Show a correctly scaled car in one open bay. |
+| Car in visualisation | Implemented in V2 | Simplified Model Y, using published 2025+ EU Premium reference dimensions; actual variant unconfirmed. |
 | Planning drawings | User objective | Clear, dimensioned existing and proposed drawings suitable for eventual local validation. |
 | Site plan | Requested in quoted brief | Identify buildings and locate the replacement footprint accurately. |
 | Location plan | Requested in quoted brief | Show wider surroundings and access towards the main road; extent to be established from actual mapping. |
 | Options | User objective | Explore several 3D alternatives before choosing a final design. |
-| Software | Preference, not fixed | JavaScript and Blender preferred; CAD and Three.js are acceptable. |
+| Software | Implemented workflow | Python/shared parameters generate Blender geometry and vector drawings; CAD/Three.js not needed for this milestone. |
 
 ## 3. Source register
 
@@ -98,17 +100,17 @@ Our drawing quality standard: vector PDF, stated paper size and metric scale, sc
 
 ## 6. Implemented modelling workflow
 
-The agreed first milestone is one faithful baseline, using a shared millimetre parameter file, Python vector drawing generation and scripted Blender geometry. Three.js and CAD are not required for P01.
+The agreed first milestone is one faithful baseline, using a shared millimetre parameter file, Python vector drawing generation and scripted Blender geometry. Three.js and CAD are not required for V2.
 
 - `data/parameters.json`: source value, evidence and status for each controlling dimension.
 - `scripts/drawings.py`: two six-page A3 landscape PDF packs plus 12 editable SVG sheets, at 1:50.
-- `scripts/blender_scene.py`: editable proposed/existing Blender geometry, three proposed renders, and two same-camera massing views.
+- `scripts/blender_scene.py`: editable proposed/existing Blender geometry, three proposed exterior renders, one orthographic clearance render, and two same-camera massing views.
 - `scripts/validate_pack.py` and `scripts/verify_blender.py`: format, scale and saved-geometry checks.
 - `MEASUREMENTS_FOR_DAD.md`: outstanding site/survey inputs.
 
-P01 preserves proposed 9000 x 6000, eaves 2300 and ridge 4163, deriving 31.84 degrees. This is an explicit review-model choice, not resolution of the source conflict. Existing geometry preserves 3500 x 6800, eaves 2200, ridge 3800, roof length 7200 and approach 1200.
+The current baseline preserves proposed 9000 x 6000, eaves 2300 and ridge 4163, deriving 31.84 degrees. This is an explicit review-model choice, not resolution of the source conflict. Existing geometry preserves 3500 x 6800, eaves 2200, ridge 3800, roof length 7200 and approach 1200.
 
-Visual assumptions: 150 mm proposed posts, 180 mm beam depth, 100 mm walls, 300 mm plinth, full left partition, 150 mm proposed overhangs and neutral dark-grey roof. Existing door width is tentatively 2200 (two 1100 leaves), shown schematically and not dimensioned as confirmed. Existing roof overhang distribution is assumed symmetric. Rendering includes simple braces and no engineered structural design. A generic car body is 4500 x 1800 x 1450; mirrors are omitted.
+Visual assumptions: 150 mm proposed posts, 180 mm beam depth, 100 mm walls, 300 mm plinth, full left partition, 150 mm proposed overhangs and illustrative red profiled tiles. Existing door width is tentatively 2200 (two 1100 leaves), shown schematically and not dimensioned as confirmed. Existing roof overhang distribution is assumed symmetric. V2 includes curved oak braces and no engineered structural design. It replaces the P01 generic car with a simplified Model Y: 4790 x 1920 x 1624 mm, 2129 mm over mirrors. A provisional 90 mm roof-to-frame allowance and 180 mm beam put the entrance underside at 2030 mm, giving 406 mm nominal vertical clearance.
 
 Outputs carry preliminary status. The geometry section describes roof/wall datums, not a build-up detail. Site placement and compass orientation are not modelled. The saved Blender file defaults to the proposal; the existing collection is hidden. Comparison images re-centre each building to one common camera and ground datum and are not a site overlay.
 
@@ -124,9 +126,9 @@ These are proposed bounded roles for later delegation, not agents already starte
 | G2 Identify site and planning requirements | Planning researcher | Confirmed jurisdiction/LPA, application route assessment and linked current local checklist | Address, use and planning history | Pending inputs |
 | G3 Establish survey and mapping base | Site/survey coordinator | Verified dimensions, levels, north, boundaries and building identities | Dad’s marked map, survey/original drawings | Pending inputs |
 | G4 Build dimensional master | Geometry modeller | Shared reference model and explicit assumptions | P01 baseline chosen | Complete provisionally; survey update pending |
-| G5 Visualise baseline | Visualisation specialist | Three faithful baseline views, scale car and massing comparison | G4 | P01 baseline produced; alternatives deferred by user |
-| G6 Produce drawing package | Planning drafter | Existing/proposed building plans, elevations and section | G4 | P01 building pack produced; site/location plans pending inputs |
-| G7 Review outputs | Geometry and visual checks | Check internal consistency, scales and labels | G6 | P01 automated and visual QA complete; site/council checks deferred |
+| G5 Visualise baseline | Visualisation specialist | Three faithful baseline views, scale car and massing comparison | G4 | V2 baseline and Model Y clearance complete; V3 alternatives queued, not started |
+| G6 Produce drawing package | Planning drafter | Existing/proposed building plans, elevations and section | G4 | V2 building pack complete; site/location plans pending inputs |
+| G7 Review outputs | Geometry and visual checks | Check internal consistency, scales and labels | G6 | V2 automated and visual QA complete; site/council checks pending |
 
 ## 8. Information to obtain from Dad
 
@@ -148,8 +150,30 @@ Priority inputs:
 - 2026-09-14: Recommend a shared parameter model for 2D/3D; software implementation remains open.
 - 2026-09-14: User selected review pack first and one faithful baseline. Adopted Blender/Python workflow.
 - 2026-09-14: P01 building drawing and render pack created. Paired doors remain left when facing entrance; two bays open.
-- Next milestone: Dad reviews P01, confirms site identity and supplies a marked footprint, measurements and the roof decision; then regenerate and add site/location drawings.
+- Current next steps: V3 design alternatives queued for 15 September (see WORK_STATUS.md), alongside Dad reviewing V2 and supplying site identity, marked footprint, measurements and roof decisions. Site/location drawings depend on those inputs.
 
 - P01 delivery: two six-page PDFs, 12 SVGs, editable Blender file, three proposed PNG views, two massing views, two review boards, scripts, parameters and measurement checklist. Automated reports and visual review notes are included in the ZIP.
 
 - User subsequently confirmed the rendered left-hand enclosed bay is correct. This resolves the handedness question, but does not establish site placement or compass orientation.
+
+
+## P02 current decisions — supersede P01 appearance and generic vehicle
+
+- S5: `Original Ref docs/overhead-zoomed-out-wide-angle.jpeg` is an oblique site photograph, not a measurable plan. User confirms the right side is a hard limit; potential expansion is to the left towards the fence, without further tree removal. Fence position, clearance and fit of the full footprint remain unmeasured. Do not derive north or ownership from this photo.
+- S6: Dad's 14 September 2026 22:01 message requests a traditional oak frame, natural wood coloured weatherboarding and red pantile roof. His expectation of planner preference is not council confirmation.
+- S7: `Original Ref docs/materials-reference-natural-timber-red-tiles.png` supplies appearance: warm natural boarding, exposed frame, curved knee braces, red profiled tiles and dark rainwater goods. Its caption specifies 30° interlocking concrete tiles; Dad says pantiles. Clay versus concrete and the actual product remain undecided. The model retains the dimension-derived 31.84° pitch.
+- S8: User specifically requests a Tesla Model Y to judge roof clearance. Use a simplified 2025+ European Premium five-seat reference, 4790 mm long, 1920 mm body width, 2129 mm over mirrors, 1624 mm high, 2890 mm wheelbase. [Tesla published dimensions](https://www.tesla.com/ownersmanual/modely/en_eu/GUID-1E76B638-7B12-4D9A-8767-94B7F1E92A0E.html). Confirm the actual vehicle variant; this is not manufacturer CAD.
+- Garage remains on the left facing the entrance, with exactly two open bays. Natural doors are an appearance assumption. Red brick plinth retained from S1; full partition retained provisionally.
+- Roof surface remains 2300 mm at wall line and 4163 mm at ridge. P02 allows 90 mm from eaves surface to frame top, then a provisional 180 mm beam: underside 2030 mm. Model Y roof is 1624 mm, giving 406 mm nominal vertical clearance passing under the central beam on level ground. Roof assembly/member sizes are not structurally designed. Curved braces reduce clearance towards posts. No roof racks or raised tailgate are included.
+- S5 suggests weathered natural boarding and blue-green existing doors. S2 calls the roof corrugated while the photograph appears tiled: unresolved, no surveyed covering claimed.
+- Current outputs are in `output/P02/`; P01 remains preserved. Live scripts regenerate P02. Existing/proposed drawings, editable Blender geometry, three exterior views, a dedicated vehicle-clearance view and same-scale massing comparison form the review milestone.
+- Still needed: measured site/right-limit/fence offsets, original uncropped drawings, actual address and council, verified roof geometry, structural frame/roof design, door details, chosen tile product and actual vehicle variant. Site/location plans and submission validation remain pending.
+
+
+## V2 freeze and V3 design backlog — 14 September 2026
+
+V2 is the user-facing iteration name; P02 remains its drawing/model revision and output folder. Preserve this baseline for comparison. No V3 geometry, materials variants or renders have been implemented.
+
+**S9 — V3 inspiration:** `Original Ref docs/V3-barn-style-timber-doors-reference.jpg`, copied from the user's attached image. The low-resolution reference suggests a plainer barn form, natural timber and solid timber doors; it appears to show doors at both ends and an open central bay. It supplies appearance inspiration, not dimensions or a confirmed replacement layout. The user's accompanying description governs the intent: more pure barn style, wood and shut-door styling.
+
+For tomorrow, 15 September 2026, queue V3-A as one of the first alternative designs using S9. Explore the plainer timber/closed-door appearance and explicitly decide which bays receive doors; do not silently supersede V2's left enclosed bay and two open bays. Then develop at least one further distinct alternative (not yet specified) and render comparable views with the same dimensional baseline and Model Y. These are design/material alternatives, not a selected final scheme. Task-list entry only: no scheduled automation and no implementation now.

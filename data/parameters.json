@@ -129,23 +129,48 @@
       "value": 3572,
       "source": "S1, endpoints unknown; not controlling",
       "status": "conflicting"
+    },
+    "eaves_to_frame_top": {
+      "value": 90,
+      "source": "P02 visual roof covering/support allowance below 2300 mm eaves envelope",
+      "status": "visual assumption; final roof build-up and beam level to be designed"
     }
   },
   "car": {
     "width": {
-      "value": 1800,
-      "source": "generic scale car, body width",
-      "status": "visual assumption"
+      "value": 1920,
+      "source": "Tesla Model Y EU owner manual, Premium 5-seat, 2025+; checked 14 Sep 2026",
+      "status": "manufacturer reference; actual vehicle variant unconfirmed"
+    },
+    "width_with_mirrors": {
+      "value": 2129,
+      "source": "Tesla Model Y EU owner manual, Premium 5-seat, 2025+; checked 14 Sep 2026",
+      "status": "manufacturer reference; actual vehicle variant unconfirmed"
     },
     "length": {
-      "value": 4500,
-      "source": "generic scale car",
-      "status": "visual assumption"
+      "value": 4790,
+      "source": "Tesla Model Y EU owner manual, Premium 5-seat, 2025+; checked 14 Sep 2026",
+      "status": "manufacturer reference; actual vehicle variant unconfirmed"
     },
     "height": {
-      "value": 1450,
-      "source": "generic scale car",
-      "status": "visual assumption"
+      "value": 1624,
+      "source": "Tesla Model Y EU owner manual, Premium 5-seat, 2025+; checked 14 Sep 2026",
+      "status": "manufacturer reference; actual vehicle variant unconfirmed"
+    },
+    "wheelbase": {
+      "value": 2890,
+      "source": "Tesla Model Y EU owner manual, Premium 5-seat, 2025+; checked 14 Sep 2026",
+      "status": "manufacturer reference; actual vehicle variant unconfirmed"
+    },
+    "front_overhang": {
+      "value": 889,
+      "source": "Tesla Model Y EU owner manual, Premium 5-seat, 2025+; checked 14 Sep 2026",
+      "status": "manufacturer reference; actual vehicle variant unconfirmed"
+    },
+    "ground_clearance": {
+      "value": 167,
+      "source": "Tesla Model Y EU owner manual, Premium 5-seat, 2025+; checked 14 Sep 2026",
+      "status": "manufacturer reference; actual vehicle variant unconfirmed"
     }
   },
   "finishes": {
@@ -248,5 +273,12 @@
       "source": "Illustrative pantile geometry, not a selected product",
       "status": "visual assumption"
     }
+  },
+  "vehicle_reference": {
+    "model": "Tesla Model Y Premium, 5-seat, 2025+ European reference",
+    "source_url": "https://www.tesla.com/ownersmanual/modely/en_eu/GUID-1E76B638-7B12-4D9A-8767-94B7F1E92A0E.html",
+    "geometry": "Simplified recognizable silhouette scaled to published overall dimensions; not manufacturer CAD",
+    "roof_rack": false,
+    "tailgate": "Closed; open-tailgate clearance not modelled"
   }
 }

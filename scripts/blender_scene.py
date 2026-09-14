@@ -42,7 +42,7 @@ concrete=mat('Neutral concrete / visual only',(.48,.48,.44),.9)
 old=mat('Existing weathered timber - photo S5',(.28,.23,.18),.85)
 old_door=mat('Existing blue-green doors - photo S5',(.10,.25,.23),.8)
 oldroof=mat('Existing corrugated roof - colour unverified',(.20,.22,.22),.65)
-carpaint=mat('Generic car silver',(.43,.52,.55),.25,.6)
+carpaint=mat('Tesla Model Y pearl white - illustrative',(.72,.75,.77),.25,.3)
 glass=mat('Car glazing',(.045,.095,.12),.15,.25)
 rubber=mat('Tyres',(.018,.02,.023),.8)
 wheel=mat('Wheels',(.27,.29,.31),.3,.65)
@@ -166,7 +166,7 @@ def pantiles(w,d,e,r,ov):
   for xx in [-ov+n*step,-ov+(n+1)*step-.003]:
    for j in range(17):
     theta=math.pi*j/16;verts.append((xx,d/2+radius*math.cos(theta),r-radius+radius*math.sin(theta)))
-  for j in range(16):faces.append((base+j,base+17+j,base+18+j,base+j+1))
+  for j in range(16):faces.append((base+j+1,base+18+j,base+17+j,base+j))
  caps=mesh('Red profiled ridge caps',verts,faces,roof)
  for poly in caps.data.polygons:poly.use_smooth=True
  thick=caps.modifiers.new('Ridge cap visual thickness','SOLIDIFY');thick.thickness=.012;thick.offset=-1
@@ -174,17 +174,18 @@ def pantiles(w,d,e,r,ov):
 
 pro=collection('PROPOSED - reference dimensions, provisional details');current=pro
 p={k:(v/1000 if isinstance(v,(int,float)) and not isinstance(v,bool) else v) for k,v in values('proposed').items()};w,d,e,r=p['width'],p['depth'],p['eaves'],p['ridge']
+ef=e-p['eaves_to_frame_top']
 cube('Floor visual only',(w/2,d/2,-.075),(w,d,.15),concrete)
 for name,a,b in [('Rear',(0,d-.05),(w,d-.05)),('Left',(.05,0),(.05,d)),('Right',(w-.05,0),(w-.05,d)),('Partition',(p['bay'],0),(p['bay'],d-p['wall']))]:
- plinth_wall(name,a,b,p['plinth']);flat_boards(name+' horizontal boarding',a,b,p['plinth'],e,black)
-for xx in [.05,w-.05]:gable_boards('Gable boarding','x',xx,d,e-.10,r-.10,black)
+ plinth_wall(name,a,b,p['plinth']);flat_boards(name+' horizontal boarding',a,b,p['plinth'],ef,black)
+for xx in [.05,w-.05]:gable_boards('Gable boarding','x',xx,d,ef,r-.09,black)
 # Full-height partition follows the roof profile.
-gable_boards('Partition upper boarding','x',p['bay'],d,e-.10,r-.10,black)
-for xx in [v/1000 for v in post_positions()]:cube('Front post - 150 assumed',(xx,.075,e/2),(.15,.15,e),frame,.008)
-cube('Front beam - 180 deep assumed',(w/2,.075,e-.09),(w,.15,.18),oak_beam,.008)
-for xx,direction in [(p['bay'],1),(2*p['bay'],-1),(2*p['bay'],1),(w-p['post']/2,-1)]:curved_brace(xx,direction,e)
+gable_boards('Partition upper boarding','x',p['bay'],d,ef,r-.09,black)
+for xx in [v/1000 for v in post_positions()]:cube('Front post - 150 assumed',(xx,.075,ef/2),(.15,.15,ef),frame,.008)
+cube('Front beam - 180 deep assumed',(w/2,.075,ef-.09),(w,.15,.18),oak_beam,.008)
+for xx,direction in [(p['bay'],1),(2*p['bay'],-1),(2*p['bay'],1),(w-p['post']/2,-1)]:curved_brace(xx,direction,ef)
 # Door leaves fill first opening, below beam. Keep two open bays.
-doorw=clear_openings()[0]/1000;doorh=e-.18
+doorw=clear_openings()[0]/1000;doorh=ef-.18
 for leaf in range(2):
  left=.15+leaf*doorw/2
  cube('Left bay double door '+str(leaf+1),(left+doorw/4,.085,doorh/2),(doorw/2-.012,.065,doorh-.015),black,.004)
@@ -199,20 +200,59 @@ for yy in [-p['overhang']-.025,d+p['overhang']+.025]:
  cube('Dark gutter - illustrative',(w/2,yy,e-(r-e)/(d/2)*p['overhang']-.10),(w+2*p['overhang'],.10,.10),hardware,.025)
 beam('Downpipe - illustrative',(w-.04,-.13,.05),(w-.04,-.13,e-.18),.075,hardware)
 
-cars=collection('SCALE CAR - generic 4500 x 1800 x 1450');current=cars
+
+cars=collection('TESLA MODEL Y - 2025+ Premium reference, simplified');current=cars
 cp=values('car');cw,cl,ch=[cp[k]/1000 for k in ['width','length','height']];cx,cy=1.5*p['bay'],d/2+.15
-cube('Car lower body',(cx,cy,.57),(cw-.08,cl,.57),carpaint,.17)
-cube('Car bonnet',(cx,cy-cl/2+.65,.89),(cw-.14,1.25,.20),carpaint,.09)
-# Tapered cabin as custom mesh.
-x0=cx-(cw-.20)/2;x1=cx+(cw-.20)/2;yt=cy-1.02;yb=cy+1.2
-verts=[(x0,yt,.9),(x1,yt,.9),(x1,yb,.9),(x0,yb,.9),(x0+.16,yt+.5,ch),(x1-.16,yt+.5,ch),(x1-.16,yb-.35,ch),(x0+.16,yb-.35,ch)]
-mesh('Car glass cabin',verts,[(0,1,5,4),(1,2,6,5),(2,3,7,6),(3,0,4,7),(4,5,6,7)],glass)
-cube('Car roof',(cx,cy+.15,ch-.035),(cw-.48,1.24,.065),carpaint,.035)
-for xx in [cx-cw/2+.055,cx+cw/2-.055]:
- for yy in [cy-1.42,cy+1.42]:
-  bpy.ops.mesh.primitive_cylinder_add(vertices=32,radius=.31,depth=.11,location=(xx,yy,.31),rotation=(0,math.pi/2,0));o=assign(bpy.context.object);o.name='Car tyre';o.data.materials.append(rubber)
-  bpy.ops.mesh.primitive_cylinder_add(vertices=24,radius=.20,depth=.115,location=(xx,yy,.31),rotation=(0,math.pi/2,0));o=assign(bpy.context.object);o.name='Car wheel';o.data.materials.append(wheel)
-for xx in [cx-.57,cx+.57]:cube('Headlight',(xx,cy-cl/2-.005,.75),(.40,.03,.12),lightmat,.02)
+# Closed, rounded lower-body loft with published length and width.
+ys=[-cl/2,-2.15,-1.50,-.35,.75,1.55,2.12,cl/2]
+widths=[.72,.92,1,1,.98,.98,.91,.77];tops=[.65,.84,.98,1.03,1.05,1.04,.98,.83]
+verts=[];faces=[]
+for yy,wf,zt in zip(ys,widths,tops):
+ half=cw/2*wf
+ cross=[(-half*.78,.21),(-half,.34),(-half,zt-.10),(-half*.85,zt),(0,zt+.035),(half*.85,zt),(half,zt-.10),(half,.34),(half*.78,.21)]
+ verts += [(cx+xx,cy+yy,zz) for xx,zz in cross]
+for row in range(len(ys)-1):
+ for j in range(9):faces.append((row*9+j,row*9+(j+1)%9,(row+1)*9+(j+1)%9,(row+1)*9+j))
+faces += [tuple(range(8,-1,-1)),tuple(range((len(ys)-1)*9,len(ys)*9))]
+body=mesh('Model Y body - published overall envelope',verts,faces,carpaint)
+import bmesh
+bm=bmesh.new();bm.from_mesh(body.data);bmesh.ops.recalc_face_normals(bm,faces=list(bm.faces));bm.to_mesh(body.data);bm.free()
+for poly in body.data.polygons:poly.use_smooth=True
+# Tyre arches cut out of body, rather than wheels hidden inside a solid block.
+wheel_ys=[cy-cl/2+cp['front_overhang']/1000,cy-cl/2+cp['front_overhang']/1000+cp['wheelbase']/1000]
+for xx in [cx-.818,cx+.818]:
+ for yy in wheel_ys:
+  bpy.ops.mesh.primitive_cylinder_add(vertices=48,radius=.388,depth=.60,location=(xx,yy,.365),rotation=(0,math.pi/2,0));cut=assign(bpy.context.object)
+  mod=body.modifiers.new('Wheel arch','BOOLEAN');mod.operation='DIFFERENCE';mod.object=cut
+  bpy.context.view_layer.objects.active=body;bpy.ops.object.modifier_apply(modifier=mod.name);bpy.data.objects.remove(cut,do_unlink=True)
+  bpy.ops.mesh.primitive_cylinder_add(vertices=64,radius=.365,depth=.235,location=(xx,yy,.365),rotation=(0,math.pi/2,0));o=assign(bpy.context.object);o.name='Model Y tyre';o.data.materials.append(rubber)
+  bevel=o.modifiers.new('Rounded tyre shoulders','BEVEL');bevel.width=.04;bevel.segments=3
+  bpy.ops.mesh.primitive_cylinder_add(vertices=48,radius=.244,depth=.239,location=(xx,yy,.365),rotation=(0,math.pi/2,0));o=assign(bpy.context.object);o.name='Model Y aero wheel';o.data.materials.append(wheel)
+bev=body.modifiers.new('Body edge rounding','BEVEL');bev.width=.065;bev.segments=4;body.modifiers.new('Body normals','WEIGHTED_NORMAL')
+# Sloping Model Y glasshouse / panoramic roof. Peak exactly 1624 mm.
+roof_ys=[-1.40,-.60,-.10,.55,1.15,1.80,2.17]
+roof_z=[1.035,1.48,1.61,ch,1.54,1.32,1.025];roof_w=[.84,.76,.735,.735,.74,.76,.80]
+verts=[];faces=[]
+for yy,zz,half in zip(roof_ys,roof_z,roof_w):
+ for j in range(17):
+  angle=-math.pi/2+j*math.pi/16;verts.append((cx+half*math.sin(angle),cy+yy,1.0+(zz-1.0)*max(0,math.cos(angle))**.30))
+for row in range(len(roof_ys)-1):
+ for j in range(16):faces.append((row*17+j,row*17+j+1,(row+1)*17+j+1,(row+1)*17+j))
+cabin=mesh('Model Y panoramic roof - 1624 mm maximum',verts,faces,glass)
+for poly in cabin.data.polygons:poly.use_smooth=True
+# Thin dark pillars and flush door handles; mirrors included in the 2129 mm envelope.
+for side in [-1,1]:
+ for yy in [cy-.2,cy+1.15]:beam('Model Y window pillar',(cx+side*.835,yy,1.03),(cx+side*.715,yy,1.50),.035,hardware)
+ for yy in [cy-.45,cy+.65]:cube('Model Y flush handle',(cx+side*.928,yy,1.00),(.018,.16,.022),hardware,.005)
+ mirror_x=cx+side*(cp['width_with_mirrors']/2000-.065)
+ cube('Model Y mirror',(mirror_x,cy-.95,1.20),(.13,.23,.10),hardware,.025)
+ beam('Mirror stem',(cx+side*.86,cy-.95,1.16),(mirror_x,cy-.95,1.20),.04,hardware)
+# Juniper-style thin front light bar and lower lamps, with a grille-free nose.
+cube('Model Y front light bar',(cx,cy-cl/2+.018,.66),(1.35,.025,.025),lightmat,.009)
+for side in [-1,1]:cube('Model Y lower lamp',(cx+side*.66,cy-cl/2+.09,.50),(.22,.035,.055),lightmat,.015)
+cube('Model Y lower intake',(cx,cy-cl/2+.035,.31),(1.05,.03,.10),hardware,.025)
+# Small bonnet emblem. The model remains explicitly simplified, not Tesla CAD.
+bpy.ops.object.text_add(location=(cx,cy-cl/2+.30,.85),rotation=(math.radians(75),0,0));emblem=assign(bpy.context.object);emblem.name='Tesla emblem';emblem.data.body='T';emblem.data.align_x='CENTER';emblem.data.size=.075;emblem.data.extrude=.001;emblem.data.materials.append(wheel)
 
 ex=collection('EXISTING - schematic massing, unsurveyed');current=ex
 q={k:v/1000 for k,v in values('existing').items()};ew,ed,ee,er=q['width'],q['depth'],q['eaves'],q['ridge']
@@ -251,10 +291,11 @@ for screen in bpy.data.screens:
    area.spaces.active.shading.type='MATERIAL'
 bpy.ops.wm.save_as_mainfile(filepath=str(OUT/'model'/'garage-baseline-P02.blend'))
 # Machine-readable verification before rendering.
-report={'proposed_pitch_deg':pitch('proposed'),'existing_pitch_deg':pitch('existing'),'clear_openings_mm':clear_openings(),'open_bays':2,'door_leaves':2,'car_body_dimensions_mm':cp,'object_count':len(bpy.data.objects),'roof_top_ridge_m':r,'materials_source':'Dad 14 Sep 2026 22:01','site_photo':'S5 - context only, unmeasured','eaves_at_wall_m':e}
+report={'proposed_pitch_deg':pitch('proposed'),'existing_pitch_deg':pitch('existing'),'clear_openings_mm':clear_openings(),'open_bays':2,'door_leaves':2,'car_reference_dimensions_mm':cp,'vehicle':'Tesla Model Y Premium 2025+ EU (simplified)' ,'object_count':len(bpy.data.objects),'roof_top_ridge_m':r,'materials_source':'Dad 14 Sep 2026 22:01','site_photo':'S5 - context only, unmeasured','eaves_at_wall_m':e}
 (OUT/'model'/'geometry-report.json').write_text(json.dumps(report,indent=2))
 render('proposed-front-three-quarter',(13,-13,8),(4.5,2.7,1.8),13.7)
 render('proposed-entrance',(4.5,-18,3.8),(4.5,2,1.8),11.5)
+render('proposed-clearance-front',(4.5,-18,1.8),(4.5,3,1.8),11.5)
 render('proposed-rear-three-quarter',(-7,16,9),(4.5,3,1.8),13.7)
 # Same camera and scale for two comparable massing renders; no car.
 cars.hide_render=True
@@ -263,4 +304,4 @@ pro.hide_render=True;ex.hide_render=False;ex.hide_viewport=False
 # Centre existing on same plan centre and same ground datum as proposed.
 for o in ex.objects:o.location.x+=(w-ew)/2;o.location.y+=(d-ed)/2
 render('massing-existing',(13,-13,8),(4.5,2.7,1.8),13.7)
-print('Blender model and five renders complete.')
+print('Blender model and six renders complete.')
