@@ -1,0 +1,46 @@
+[
+  {
+    "title": "East Suffolk Local Validation List 2024",
+    "url": "https://www.eastsuffolk.gov.uk/sites/default/files/2025-10/Local%20Validation%20List.pdf",
+    "sections": "2.11 and 2.61; printed pp.25-27, 138-144",
+    "status": "Downloaded; relevant pages extracted and visually reviewed",
+    "retrieved": "2026-09-23",
+    "sha256": "fc70cb2e18a7739ffa36ae9c77301c4058a5771fe2f7fa18328e661c5f181879"
+  },
+  {
+    "title": "Householder guidance V2 January 2026",
+    "url": "https://www.eastsuffolk.gov.uk/sites/default/files/2025-12/Local%20Validation%20Guidance%20Chapter%201.pdf",
+    "sections": "Introduction, outbuildings pp.11-13, hard surfacing p.43, vehicular access p.46",
+    "status": "Downloaded and relevant text inspected; linked from current council guidance index",
+    "retrieved": "2026-09-23",
+    "sha256": "e85ede688e4f40b54597fbbfab064885a47331c1afe6c71625d7e5a759461e19"
+  },
+  {
+    "title": "Government householder permitted-development technical guidance",
+    "url": "https://www.gov.uk/government/publications/permitted-development-rights-for-householders-technical-guidance/permitted-development-rights-for-householders-technical-guidance",
+    "sections": "General Issues: height/curtilage; Class E height, eaves, boundary and eligibility; introduction",
+    "status": "Relevant live HTML content inspected with web tool; not a site-specific determination",
+    "retrieved": "2026-09-23"
+  },
+  {
+    "title": "Planning Portal: outbuilding planning permission",
+    "url": "https://www.planningportal.co.uk/permission/common-projects/outbuildings/planning-permission/",
+    "sections": "Limits, conditions and exclusions",
+    "status": "Relevant live HTML content inspected with web tool; not a site-specific determination",
+    "retrieved": "2026-09-23"
+  },
+  {
+    "title": "Planning Portal: outbuilding Building Regulations",
+    "url": "https://www.planningportal.co.uk/permission/common-projects/outbuildings/is-building-regulations-approval-needed-for-an-outbuilding/",
+    "sections": "Detached buildings and garages; floor-area/boundary conditions",
+    "status": "Relevant live HTML content inspected with web tool; not a site-specific determination",
+    "retrieved": "2026-09-23"
+  },
+  {
+    "title": "Architects Registration Board: who can use the title architect",
+    "url": "https://arb.org.uk/public-information/before-hiring-an-architect/who-can-use-the-title-architect/",
+    "sections": "Architectural services and protected title",
+    "status": "Relevant live HTML content inspected with web tool; not a site-specific determination",
+    "retrieved": "2026-09-23"
+  }
+]

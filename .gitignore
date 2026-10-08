@@ -3,3 +3,5 @@ __pycache__/
 tmp/
 *.blend1
 output/garage-review-pack-P01.zip
+site/source/
+site/dist/

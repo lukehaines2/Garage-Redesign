@@ -1,0 +1,46 @@
+{
+  "model_sha256": "aa936d695eba87f08bb3ce4fa6e0e278dca42756f9629338f38ac944fe0d0193",
+  "result": "PASS",
+  "vehicle_bounds_m": [
+    [
+      3.435499906539917,
+      5.564499855041504
+    ],
+    [
+      0.7549999952316284,
+      5.545000076293945
+    ],
+    [
+      -5.136087999346728e-09,
+      1.6239999532699585
+    ]
+  ],
+  "entrance_beam_underside_mm": 2029.9999713897705,
+  "model_y_roof_clearance_mm": 406.000018119812,
+  "checked": "Saved .blend geometry, not only parameter values",
+  "roof_support_bounds_m": [
+    [
+      -0.15000000596046448,
+      9.149999618530273
+    ],
+    [
+      -0.15000000596046448,
+      6.150000095367432
+    ],
+    [
+      2.0488882064819336,
+      4.072999954223633
+    ]
+  ],
+  "roof_ridge_cap_height_m": 4.163000106811523,
+  "oak_frame_and_pantile_checks": "PASS",
+  "clear_openings_mm": [
+    2774.9999463558197,
+    2850.0001430511475,
+    2775.00057220459
+  ],
+  "paired_door_leaves": 2,
+  "open_front_bays": 2,
+  "existing_roof_length_mm": 7200,
+  "visual_assumptions_remain": true
+}

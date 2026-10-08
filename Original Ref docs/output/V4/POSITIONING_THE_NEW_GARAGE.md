@@ -1,0 +1,13 @@
+# How we will position the new garage
+
+Dad does not need to draw the final proposed building in the map supplier's online tool. We can add it to the detailed site base once the intended position and measurements are supplied.
+
+1. Obtain the original scaled map file with the existing building and sufficient surrounding features, access and boundaries. Check whether the chosen product covers the location plan at 1:2500 and the detailed site plan at 1:500 or 1:200. A4 describes the sheet size, not its scale or ground coverage. Check its permitted annotation/reuse; no need to buy CAD just to communicate the position.
+2. On a rough sketch, show the existing garage, the confirmed 9 x 6 m proposed outline and the east-facing entrance arrow. State which current edges/corners, if any, it aligns with, and the directions it expands. Relate east to verified map north; do not infer page orientation from the screenshot.
+3. Establish orientation and measured position. Identify the proposed corners using pegs or clear points if practical. Measure corner offsets/ties to permanent, identifiable features (such as a retained building corner, wall or fence line), with enough independent dimensions to locate the footprint and its rotation unambiguously. Include a diagonal or another check measurement. Label every endpoint; do not assume a fence is straight or an OS footprint is survey-exact.
+4. Record available width/depth, nearest domestic-curtilage boundary distances and the right-side hard limit. Include roof projections when checking proximity. Record ground levels around the footprint using one datum; the reported 300-400 mm courtyard fall is only an estimate with unspecified endpoints. Check the mapped reference features against the ground before using them as controls. Boundary distances and levels affect the height assessment in HEIGHT_AND_CONSTRUCTION.md.
+5. We draw the new footprint at scale, retain/show demolition of the old garage, add the driveway from its measured layout, and return a dimensioned draft for Dad's review. Boundary lines are based on Dad's ownership/access evidence and agreed application extent, not generated from the footprint.
+
+Entrance direction is answered: east. The remaining positioning questions are which edges/corners align with the old garage, and how far each new edge sits from identifiable retained features and the relevant boundaries. A labelled hand sketch plus these measurements is sufficient to explain intent; mapping and checks determine whether it is accurate enough to issue.
+
+Scale references: East Suffolk Local Validation List sections 2.11 and 2.61, researched 23 September 2026. [Council list](https://www.eastsuffolk.gov.uk/sites/default/files/2025-10/Local%20Validation%20List.pdf).

@@ -1,0 +1,79 @@
+{
+  "revision": "V4-S17",
+  "recorded_date": "2026-09-23",
+  "source": "Original Ref docs/V4-dad-answers-2026-09-23.md",
+  "purpose": "Design decisions only; not surveyed or construction geometry; not consumed by P02 generators",
+  "footprint_mm": {
+    "frontage": 9000,
+    "depth": 6000,
+    "status": "confirmed design intent",
+    "dimension_endpoints": "to coordinate with wall and frame details"
+  },
+  "entrance_faces": "east",
+  "siting_verified": false,
+  "bay_count": 3,
+  "equal_bays": true,
+  "nominal_divisions_mm": [
+    3000,
+    3000,
+    3000
+  ],
+  "clear_opening_widths_verified": false,
+  "enclosed_bay": "left when viewed from outside facing entrance",
+  "full_dividing_wall": true,
+  "roof_covering": "red clay pantiles; product unresolved",
+  "timber_and_door_finish": "natural, as accepted illustration",
+  "construction_intent": "general builder coordinates trades; hand built to coordinated drawings",
+  "specific_vehicle_checks_required": false,
+  "plinth": {
+    "preferred_brick_courses": 3,
+    "height_mm": null,
+    "conditional": "reconsider if necessary to achieve a low building with suitable construction details"
+  },
+  "height_intent": "as low as practical; investigate applicable permitted-development height",
+  "ridge_height_mm": null,
+  "eaves_height_mm": null,
+  "roof_pitch_degrees": null,
+  "ground_fall_report": {
+    "range_mm": [
+      300,
+      400
+    ],
+    "towards": "centre of courtyard",
+    "status": "Dad's approximate estimate",
+    "extent_and_datum": null
+  },
+  "permitted_development": {
+    "site_eligibility_verified": false,
+    "dual_pitch_overall_limit_mm": 4000,
+    "eaves_limit_mm": 2500,
+    "overall_limit_if_any_part_within_2m_of_curtilage_boundary_mm": 2500,
+    "note": "National Class E limits, not a selected project height",
+    "research": "output/V4/HEIGHT_AND_CONSTRUCTION.md"
+  },
+  "promised_inputs_not_received": [
+    "licensed map and boundaries/building annotations",
+    "garage-position sketch",
+    "driveway sketch",
+    "four-side photographs"
+  ],
+  "accepted_illustration": "output/V4/image/barn-pantiles-edit-V4-01.png",
+  "visual_model": {
+    "path": "output/V4/model/garage-V4-review.blend",
+    "status": "review model only; not technical specification",
+    "clear_front_openings_mm": [
+      2800,
+      2800,
+      2800
+    ],
+    "assumed_post_width_mm": 150,
+    "ridge_eaves_plinth_placeholders_mm": [
+      4163,
+      2300,
+      300
+    ],
+    "three_course_depiction_is_not_a_brick_specification": true,
+    "orientation": "local X east, Y north; not surveyed",
+    "ground": "flat studio plane; reported site slope not modelled"
+  }
+}

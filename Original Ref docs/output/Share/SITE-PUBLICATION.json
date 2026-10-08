@@ -1,0 +1,27 @@
+{
+  "date": "2026-09-23",
+  "project_id": "appgprj_6ab40621ca748191a1890562fe22d252",
+  "deployment_id": "appgdep_6ab409690f908191819d31ef49c5b5d0",
+  "version_id": "appgprj_6ab40621ca748191a1890562fe22d252~appgver_ea14d3efbf788191ae1355b19ff3385d",
+  "url": "https://billeaford-garage-review.lukehaines2.chatgpt.site",
+  "status": "succeeded",
+  "access": "owner-only; sharing choice requested and awaiting reply",
+  "diagnosis": {
+    "back_link": "Working-tree viewer linked to /START-HERE.html, which returned 404. Added a root bridge; hosted full pack includes its target.",
+    "blank_model": "Original blank display not reproduced. Model rendered in browser; added asynchronous online geometry loading, first-frame verification, graphics/load error handling and image fallback."
+  },
+  "checks": {
+    "static_links": "PASS",
+    "local_controls": "PASS",
+    "local_back_link": "PASS",
+    "local_complete_zip_download": "PASS",
+    "load_failure_picture_fallback": "PASS",
+    "online_home": "PASS",
+    "online_model": "PASS: visible 169,648-triangle garage, no browser errors",
+    "online_back_link": "PASS",
+    "online_complete_zip_download": "PASS: complete pack downloaded with part-size and hash checks",
+    "detail_controls": "PASS: local overview, roof cutaway, weatherboarding toggle and reset, no graphics errors"
+  },
+  "model_sha256": "1b818c9192fa5c72e16de18641d2294677c0b2cb3810f6af32d270af58b477b4",
+  "presentation_update": "Timber grain, clay surface variation, directional depth-map shadows recalculated when parts are hidden. Existing model geometry retained."
+}

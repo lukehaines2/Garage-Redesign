@@ -1,0 +1,29 @@
+{
+  "model_sha256": "1b818c9192fa5c72e16de18641d2294677c0b2cb3810f6af32d270af58b477b4",
+  "baseline_sha256": "aa936d695eba87f08bb3ce4fa6e0e278dca42756f9629338f38ac944fe0d0193",
+  "source_intent": "data/v4-design-intent.json",
+  "viewer_vertices": {
+    "structure": 129360,
+    "walls": 41364,
+    "doors": 7776,
+    "roof": 330444
+  },
+  "coordinate_system": "local X east, Y north, Z up; not surveyed",
+  "changes": [
+    "equal front clear spans under assumed post sizes",
+    "full partition retained",
+    "three visible plinth courses in retained 300 mm placeholder",
+    "continuous end boarding",
+    "interior framing added",
+    "vehicle removed",
+    "east-facing local orientation",
+    "packed resources and GLB export"
+  ],
+  "provisional_dimensions_mm": {
+    "ridge": 4163,
+    "eaves": 2300,
+    "plinth": 300,
+    "posts": 150
+  },
+  "final_height_selected": false
+}

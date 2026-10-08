@@ -1,0 +1,10 @@
+{
+  "result": "PASS",
+  "checks": [
+    "existing: 6 A3 pages; all text within margins; 1:50 footprint and scale bar verified",
+    "proposed: 6 A3 pages; all text within margins; 1:50 footprint and scale bar verified",
+    "12 editable SVG sheets with A3 physical dimensions",
+    "Roof geometry reconciles to chosen ridge/eaves datums"
+  ],
+  "caveat": "Validates internal consistency and output format, not site survey accuracy or planning compliance."
+}

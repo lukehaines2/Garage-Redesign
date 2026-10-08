@@ -1,0 +1,12 @@
+---
+description: "Billeaford Hall garage pack: setup, Blender viewing and project explanations"
+alwaysApply: true
+---
+
+This workspace is Dad's garage review pack, not a software application to build.
+
+Read and follow the pack-root `AGENTS.md`. Use `LLM-PROJECT-CONTEXT.md` for the current design, file map and limitations.
+
+When asked to start or run the pack, follow `SETUP-BLENDER.md`: detect/reuse a compatible Blender, install the free official release if needed under the user's request and normal permissions, open `output/V4/model/garage-V4-review.blend` in the GUI, and open `START-HERE.html` in a browser. Do not rebuild the existing assets as part of startup.
+
+The current V4 review model has provisional roof/plinth/frame dimensions. P02 drawings and V3 options are historical. Explain these distinctions when answering questions and preserve the supplied files.

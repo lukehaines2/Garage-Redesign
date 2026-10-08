@@ -1,0 +1,38 @@
+{
+  "result": "PASS",
+  "checked": "Saved Blender geometry, orientation, clear spans, door count, partition and embedded resources",
+  "model_sha256": "1b818c9192fa5c72e16de18641d2294677c0b2cb3810f6af32d270af58b477b4",
+  "floor_extents_m": [
+    [
+      -3.0000007152557373,
+      3.0000009536743164
+    ],
+    [
+      -4.500000476837158,
+      4.500000953674316
+    ],
+    [
+      -0.15000000596046448,
+      0.0
+    ]
+  ],
+  "clear_front_openings_m": [
+    2.8000004291534424,
+    2.799999713897705,
+    2.8000004291534424
+  ],
+  "entrance_direction": "+X/east; no site georeferencing",
+  "closed_bay": "left/south",
+  "door_leaves": 2,
+  "open_bays": 2,
+  "plinth_visible_courses": [
+    1,
+    2,
+    3
+  ],
+  "ridge_placeholder_m": 4.163000106811523,
+  "render_samples": 32,
+  "unpacked_image_dependencies": [],
+  "linked_libraries": 0,
+  "construction_verified": false
+}
