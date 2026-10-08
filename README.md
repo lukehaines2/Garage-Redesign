@@ -36,6 +36,8 @@ python3 scripts/finish_pack.py
 
 Use `-- --quick` after the Blender script argument for a 24-sample preview. Standard output uses 64-sample Cycles renders at 1500 x 1050. Blender stores units in metres; the parameter file is millimetres. Outputs are deterministically rebuilt at stable paths. Changing a parameter requires regenerating both drawings and model.
 
+Commit source (`scripts/`, `data/`, notes, `Original Ref docs/` photographs and PDFs) plus the current `output/` models, renders and drawings. Do not commit ZIP packs, the `output/Share/Billeaford-Hall-full-review/` snapshot, or `site/source`/`site/dist`; rebuild those with `python3 scripts/package_full_review.py` and `python3 scripts/prepare_review_site.py`.
+
 Blender 4.5.10 for Apple Silicon was downloaded from the [official Blender release directory](https://download.blender.org/release/Blender4.5/) and run from a temporary mounted disk image. The Blender application is not bundled in the review pack. Install Blender or point the command to its executable to regenerate later.
 
 ## Review and next issue

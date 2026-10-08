@@ -2,6 +2,15 @@
 __pycache__/
 tmp/
 *.blend1
-output/garage-review-pack-P01.zip
+
+# Generated archives — rebuild with scripts/package_full_review.py
+*.zip
+output/Share/Billeaford-Hall-full-review/
+
+# Generated V4 viewer — rebuild from scripts/v4_viewer_template.html and the .glb
+output/V4/viewer/garage-V4-viewer.html
+output/V4/viewer/model-data.json
+
+# Generated ChatGPT Sites snapshot — rebuild with scripts/prepare_review_site.py
 site/source/
 site/dist/
